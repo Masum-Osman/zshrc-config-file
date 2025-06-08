@@ -1,0 +1,79 @@
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/masumosman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/masumosman/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/masumosman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/masumosman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+alias air='/Users/masumosman/go/bin/air'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/masumosman/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/masumosman/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/masumosman/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/masumosman/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+alias dc="docker-compose"
+alias dcu="docker-compose up"
+alias dcub="docker-compose up --build"
+alias dcubr="docker-compose up --build --remove-orphans"
+alias dce="docker-compose exec"
+alias gadd="git add"
+alias gcommit="git commit -m"
+alias dcd="docker-compose down"
+alias pa="php artisan"
+alias pas="php artisan serve"
+alias gpullo="git pull origin"
+alias gpusho="git push origin"
+alias dcrr="dc run --rm"
+alias k="kubectl"
+alias kg="kubectl get"
+alias kt="kubectl top"
+alias kgp="kubectl get pod"
+alias kl="kubectl logs -f"
+alias k8s="kubectl config use-context"
+alias k8sdev="kubectl config use-context arn:aws:eks:ap-southeast-1:667961227419:cluster/10minschool-eks-dev"
+alias k8sstage="kubectl config use-context arn:aws:eks:ap-southeast-1:667961227419:cluster/10minschool-eks-stage"
+alias k8sprod="kubectl config use-context arn:aws:eks:ap-southeast-1:667961227419:cluster/10minschool-eks-prod"
+eval
+
+alias dcr="docker container"
+alias di="docker image"
+
+alias art="artillery"
+alias nrd="npm run start:dev"
+alias cls="clear"
+alias gst="git status"
+alias gcout="git checkout"
+alias gsturl="git remote set-url origin"
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/masumosman/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/masumosman/Library/Application Support/Herd/config/php/83/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/masumosman/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 7.4 configuration.
+export HERD_PHP_74_INI_SCAN_DIR="/Users/masumosman/Library/Application Support/Herd/config/php/74/"
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/masumosman/Library/Application Support/Herd/config/php/82/"
+alias swag=$(go env GOPATH)/bin/swag
+export PATH="$HOME/go/bin:$PATH"
